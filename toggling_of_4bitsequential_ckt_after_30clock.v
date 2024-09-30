@@ -1,4 +1,4 @@
-
+//write an RTL code  for sequential ckt to toggle 4bit output for every 30 clock cycle
   module toggle_4bit(clk,rst,Q);
   input clk,rst;
   output reg [3:0]Q;
