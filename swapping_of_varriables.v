@@ -35,7 +35,7 @@ module swapping();
     $display("value before swapping a=%0d b=%0d",a,b);
     a=a+b; //a=a*b;  //a=a^b;
     b=a-b; //b=a/b;  //b=a^b;
-    a=a_b; //a=a/b;  //a=a^b;
+    a=a-b; //a=a/b;  //a=a^b;
     $display("value after swapping a=%0d b=%0d",a,b);
   end
 endmodule
