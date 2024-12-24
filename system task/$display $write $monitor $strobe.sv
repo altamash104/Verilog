@@ -15,8 +15,8 @@
       %s  or %S -String
       %t        -Time units
 5.System task are not synthesizable
-  
 */
+
 module disp;
   reg[15:0]mreg;
   initial
@@ -65,3 +65,6 @@ module monitor_check();
     end
   $monitor("Display: value of a is %b",a);
 endmodule
+/*
+Display: value of a is 11
+*/
