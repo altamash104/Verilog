@@ -38,19 +38,28 @@ simulation time is =0
 
 // $strobe- it will display data at the end of simulation time,when all the simulation events that have occured for that simulation time.
 module display_check();
-  reg a;
+  reg [1:0]a;
   initial
     begin
-    a=1'b0;
-      $strobe ("strobe: value of a is %b",a);
-      $display("Display :value of a is %b",a);
-    a=1'b1;
+      a=2'd0;
+      $strobe ("strobe: value of a is %d",a,$time); //here current simulation time is 0ns so $strobe will show only value at 0ns 
+      $display("Display :value of a is %d",a,$time);
+      a=2'd1;
+      #5;
+      a=2'd2;
+      $strobe ("strobe: value of a is %d",a,$time);//here current simulation time is 0ns so $strobe will show only value at 0ns
+      $display("Display :value of a is %d",a,$time);
+      a=2'd3;
+      #10;
+      a=2'd4;
     end
 endmodule
 
 /*
-Display :value of a is 0
-strobe: value of a is 1
+Display :value of a is 0                   0
+strobe: value of a is 1                   0
+Display :value of a is 2                   5
+strobe: value of a is 3                   5
 */
 
 //$Monitor Each time a variable or an expression in the argument list changes value ,the entire argument list is displayed at the end of the time step.
