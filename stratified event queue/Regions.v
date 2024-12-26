@@ -5,7 +5,9 @@ Active region-
   evaluate RHS non-blocking assignment
   evaluate $display ,$write
   evaluate continuous assignment
-Inactive  region- #0 delay statement used to avoid race condition
+Inactive  region- #0 This is particularly useful when multiple procedural block might try to update the same variable simultaneously
+                     as the #0 delay ensures the statement with it execute last, preventing race condition.
+                     Remember #0 doesn't represent actual hardware delay but purely for simulation process.
 Non-blocking region- update LHS of NBA.
 Postponed region- evalutes $strobe,$monitor.
 Priority- Active-Inactive-NBA-Postponed.
