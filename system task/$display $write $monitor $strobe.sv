@@ -47,7 +47,7 @@ module display_check();
       a=2'd1;
       #5;
       a=2'd2;
-      $strobe ("strobe: value of a is %d",a,$time);//here current simulation time is 0ns so $strobe will show only value at 0ns
+      $strobe ("strobe: value of a is %d",a,$time);//here current simulation time is 5ns so $strobe will show only value at 3
       $display("Display :value of a is %d",a,$time);
       a=2'd3;
       #10;
