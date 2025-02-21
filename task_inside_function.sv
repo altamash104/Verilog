@@ -1,14 +1,14 @@
 module my_test;
    
-  task my_boy;
+  task my_task;
      #100;
-    $display("Hey_baby ,I want to come inside you");
-    $display("Yes! you can  come daddy ");
+    $display("call me ,I am inside task ");
+    
    endtask
 
-  function void Hey_baby;
+  function void my_fun;
     fork
-      my_boy;
+      my_task;
        
     join_none
   
@@ -17,7 +17,7 @@ module my_test;
   initial
       begin
         
-        Hey_baby;
+        my_fun;
       end
 
 endmodule
