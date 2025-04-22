@@ -20,9 +20,10 @@ module fsm_1001(input  in,rst,clk,output reg out);
     if(rst)
       prst<=s0;
     else
-    prst<=nxt_state;
+      prst<=nxt_state;
     end 
- 
+    prst = rst ? nxt_state:s0;
+  
   //next state combinational logic
   always@(*)
     begin
@@ -50,12 +51,12 @@ module fsm_1001(input  in,rst,clk,output reg out);
 endmodule   
 
 //testbench
-module test_tb;
+module fsm_1001_tb;
   
   reg clk,rst,in;
   wire out;
   
-  test dut(.clk(clk),.rst(rst),.in(in),.out(out));
+  fsm_1001 dut(.clk(clk),.rst(rst),.in(in),.out(out));
   
   always #5 clk=~clk;
   
@@ -64,21 +65,30 @@ module test_tb;
       clk=0;
       rst=1;
       in=0;
-      
-      #10 rst=0;
+      @(posedge clk)
+       rst=0;
       
       //stimulus 1001 pattern
-      @(posedge clk)in=1;// 1
-      @(posedge clk)in=0;// 10
-      @(posedge clk)in=0;//100
-      @(posedge clk)in=1;//1001
+      @(posedge clk)
+      in=1;// 1
+      @(posedge clk)
+      in=0;// 10
+      @(posedge clk)
+      in=0;//100
+      @(posedge clk)
+      in=1;//1001
       
       //stimulus 01001
-      @(posedge clk)in=0;// 0
-      @(posedge clk)in=1;// 01
-      @(posedge clk)in=0;//010
-      @(posedge clk)in=0;//01001
-      @(posedge clk)in=1;
+      @(posedge clk)
+      in=0;// 0
+      @(posedge clk)
+      in=1;// 01
+      @(posedge clk)
+      in=0;//010
+      @(posedge clk)
+      in=0;//01001
+      @(posedge clk)
+      in=1;
       
       #50;
     end
