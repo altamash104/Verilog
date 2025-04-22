@@ -7,8 +7,16 @@ module fsm_1001(input  in,rst,clk,output reg out);
   			s2=3'b010,
   			s3=3'b011,
   			s4=3'b100;
-  reg[2:0]prst ,nxt_state;*/
-  
+  reg[2:0]prst ,nxt_state;
+  */
+  /*
+ 1.incase of enumeration  it is  Easier to add, remove, or rename states. here encoding is managed by the compiler.	
+ 1.icase of parameter  If you change the number of states, you need to update the reg size and all parameter definitions.
+
+ 2.The compiler can perform better type checking. Assigning a value that is not one of the enumerated states can result in an error or warning.	
+   but in case of parameter wecould face Less type safety. You could potentially assign any 2-bit value to pstate or nstate.
+   
+  */
   typedef enum bit [2:0]{s0,s1,s2,s3,s4}state_type;
   
   state_type nxt_state, prst;
@@ -22,7 +30,7 @@ module fsm_1001(input  in,rst,clk,output reg out);
     else
       prst<=nxt_state;
     end 
-    prst = rst ? nxt_state:s0;
+   // prst = rst ? nxt_state:s0;
   
   //next state combinational logic
   always@(*)
