@@ -7,7 +7,7 @@
 
 `define HOLD   2'b00
 `define RESET  2'b01
-`define SET    2'B10
+`define SET    2'b10
 `define TOGGLE 2'b11
 
 module jk_ff(input j,k,clk,reset, output reg q);
