@@ -9,7 +9,7 @@
   time precision:-specifies delay values are rounded off before being used in simulation.common value are 1ps(pico second),1ns(nano second)
   3. time_unit>=time_precision
      ex-`timescale 1ns/1ns:- time unit is 1 nano second and time precision is 1 nano second
-  4.note:- `timescale 1ns/1ns--> divide-> time_unit/time_precision=1ns/1ns=10 raise to 0 then fractional part of the delay will be ignored.
+  4.note:- `timescale 1ns/1ns--> divide-> time_unit/time_precision=1ns/1ns=10^0 then fractional part of the delay will be ignored.
            #12.5; delay will be rounded of to 13.
            `timescale 1ns/1ps--> divide->time_unit/time_precision=1ns/1ps=10^3 i.e three places will be there after a decimal point i.e ._ _ _
            #12.5; delay will be 12.5
