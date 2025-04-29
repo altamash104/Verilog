@@ -35,7 +35,7 @@ module clk_gen();
   
 endmodule
 /////////////////////////////////////////////////
-`timescale 10ns/1ns
+`timescale 10ns/1ns // diff between 10 power is 1 so fractional part will not be ignored
 module test;
 parameter p=15.5;
 reg a;
@@ -55,7 +55,7 @@ value of a=0                  31
 
 /////////////////////////////////////////////
 
-`timescale 1ns/1ns
+`timescale 1ns/1ns //here diff between 10 power is zero so fractional part can be ignored and round off value will be taken
 module test;
   reg a;
 parameter p=15.5;
