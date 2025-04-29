@@ -1,5 +1,5 @@
 /*
-1.The `timscale compiler directive is used to set the time unit and time precision for the simulation
+1.The `timescale compiler directive is used to set the time unit and time precision for the simulation
   syntax:- `timescale time_unit/time_precision
   1.time_unit:-specifies the basic time unit used in the simulation
   2.time_precision:-specifies the time precision
