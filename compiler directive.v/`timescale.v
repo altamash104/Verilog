@@ -4,7 +4,7 @@
   1.time_unit:-specifies the basic time unit used in the simulation
   2.time_precision:-specifies the time precision
   time unit:-1.this represents base unit for simulation time.
-             2.common value are 1ns(nano second),1us(micro second),1ms(millisecond) etc
+             2.common value are 1ns(nano-second),1us(micro second),1ms(millisecond) etc
              3.all the delays are multiplied with time unit.
   time precision:-specifies delay values are rounded off before being used in simulation.common value are 1ps(pico second),1ns(nano second)
   3. time_unit>=time_precision
