@@ -42,24 +42,25 @@ module display_check();
   initial
     begin
       a=2'd0;
-      $strobe ("strobe: value of a is %d",a,$time); //here current simulation time is 0ns so $strobe will show only value at 0ns 
-      $display("Display :value of a is %d",a,$time);
+      $strobe ("strobe1: value of a=%0d",a,$time); //here current simulation time is 0ns so $strobe will show only value at 0ns 
+      $display("Display1 :value of a=%0d",a,$time);
       a=2'd1;
       #5;
       a=2'd2;
-      $strobe ("strobe: value of a is %d",a,$time);//here current simulation time is 5ns so $strobe will show only value at 3
-      $display("Display :value of a is %d",a,$time);
+      $strobe ("strobe2: value of a=%0d",a,$time);//here current simulation time is 5ns so $strobe will show only value at 3
+      $display("Display2 :value of a=%0d",a,$time);
       a=2'd3;
       #10;
       a=2'd4;
     end
 endmodule
 
+
 /*
-Display :value of a is 0                   0
-strobe: value of a is 1                   0
-Display :value of a is 2                   5
-strobe: value of a is 3                   5
+Display1 :value of a=0                   0
+strobe1: value of a=1                   0
+Display2 :value of a=2                   5
+strobe2: value of a=3                   5
 */
 
 //$Monitor Each time a variable or an expression in the argument list changes value ,the entire argument list is displayed at the end of the time step.
