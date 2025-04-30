@@ -11,7 +11,7 @@ module fsm_1001(input  in,rst,clk,output reg out);
   */
   /*
  1.incase of enumeration  it is  Easier to add, remove, or rename states. here encoding is managed by the compiler.	
- 1.icase of parameter  If you change the number of states, you need to update the reg size and all parameter definitions.
+ 1.incase of parameter  If you change the number of states, you need to update the reg size and all parameter definitions.
 
  2.The compiler can perform better type checking. Assigning a value that is not one of the enumerated states can result in an error or warning.	
    but in case of parameter wecould face Less type safety. You could potentially assign any 2-bit value to pstate or nstate.
