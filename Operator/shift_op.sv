@@ -1,3 +1,5 @@
+
+//syntax : value <<< shift_amount
 module shift_op();
   reg[3:0]a,b,x,y,z;
   
